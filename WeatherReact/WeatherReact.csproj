@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <None Remove="weatherclient\src\components\Home.tsx" />
+    <None Remove="weatherclient\src\router\index.tsx" />
   </ItemGroup>
 
   <ItemGroup>
