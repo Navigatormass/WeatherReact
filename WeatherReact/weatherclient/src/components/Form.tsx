@@ -3,8 +3,8 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                <input id="country" type="text" name="country" placeholder=" Countrys..." />
-                <input id="city" type="text" name="city" placeholder=" Citys..."/>
+                <input id="country" type="text" name="country" placeholder="  Country..." />
+                <input id="city" type="text" name="city" placeholder="  City..."/>
             </div>
         );
 

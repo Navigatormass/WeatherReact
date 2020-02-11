@@ -8,7 +8,12 @@
     <None Remove="weatherclient\src\components\Form.tsx" />
     <None Remove="weatherclient\src\components\Home.tsx" />
     <None Remove="weatherclient\src\components\WeatherDetails.tsx" />
+    <None Remove="weatherclient\src\Constants.ts" />
     <None Remove="weatherclient\src\router\index.tsx" />
+    <None Remove="weatherclient\src\types\City.ts" />
+    <None Remove="weatherclient\src\types\Country.ts" />
+    <None Remove="weatherclient\src\types\CurrentCondition.ts" />
+    <None Remove="weatherclient\src\types\Weather.ts" />
   </ItemGroup>
 
   <ItemGroup>
