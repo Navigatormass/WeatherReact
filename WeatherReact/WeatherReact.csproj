@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="weatherclient\src\components\Form.tsx" />
     <None Remove="weatherclient\src\components\Home.tsx" />
+    <None Remove="weatherclient\src\components\WeatherDetails.tsx" />
     <None Remove="weatherclient\src\router\index.tsx" />
   </ItemGroup>
 
