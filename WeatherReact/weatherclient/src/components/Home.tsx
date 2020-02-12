@@ -12,12 +12,27 @@ interface IState {
     city?: City;
 }
 
+
 class Home extends React.Component<IState> {
+
+    state: IState = {
+        weather: { error: "" } as Weather,
+        countries: [],
+        city: undefined
+    }
 
     render() {
         return (
-            <div className="App">
-                <WeatherDetails />
+            <div className="container align-content-center panel">
+                <div className="container">
+                    <div className="row">
+                        <div className="form-group">
+                            <WeatherDetails weather={this.state.weather} />
+                            <Form countries={this.state.countries}/>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
