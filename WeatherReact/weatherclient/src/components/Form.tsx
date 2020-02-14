@@ -12,13 +12,14 @@ interface IState {
 }
 
 interface IProps {
+    getWeather: (e:any, country: string, searchText: string) => Promise<void>;
     countries: Country[];
 }
 
 
 class Form extends React.Component<IProps, IState> {
     constructor(props: IProps) {
-        super(props);//In React, when you call super with props. React will make props available across the component through this.props
+        super(props);//In React, when you call super with props, React will make props available across the component through this.props
         this.state = {
             city: {} as City,
             country: {} as Country,
@@ -28,6 +29,7 @@ class Form extends React.Component<IProps, IState> {
     }
 
     handleSubmit = async (e: any) => {
+        this.props.getWeather(e, this.state.country.ID, this.state.searchText)
     }
 
     render() {

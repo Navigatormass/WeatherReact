@@ -4,5 +4,5 @@
     static currentConditionsAPIUrl = 'https://dataservice.accuweather.com/currentconditions/v1';
     static weatherIconUrl = 'http://developer.accuweather.com/sites/default/files/';
     static cityAPIUrl = '/api/cities';
-    static apiKey = '56ur44IKe8do7GdIPyGl6dvr3oKUqIpH';
+    static apiKey = 'u3DWzlKVABWo9nG4KzsR2h1h7fGOni8N';
 }

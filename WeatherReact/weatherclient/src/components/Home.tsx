@@ -57,12 +57,28 @@ class Home extends React.Component<IState> {
             const currentConditions = await res.json() as CurrentCondition[];
             if (currentConditions.length > 0) {
                 const weather = new Weather(currentConditions[0], city);
-                this.setStateAsync({ weather: weather, city: city, countries: [] } as IState);
+                this.setStateAsync({ weather: weather, city: city } as IState);
             } 
         } catch (e) {
             console.log(e);
         }
         return {} as Weather;
+    }
+
+    getWeather = async (e: any, countryCode: string, searchText: string) => {
+        e.preventDefault();
+        if (!countryCode && !searchText) {
+            await this.setStateAsync({ weather: { error: "Please enter the value" }, city: undefined, countries: [] } as IState);
+            return;
+        }
+        try {
+            const city = await this.getCity(searchText, countryCode);
+            if (city.Key) {
+                await this.getCurrentConditions(city);
+            }
+        } catch (e) {
+            await this.setStateAsync({ weather: { error: e } } as IState);
+        } 
     }
 
     async setStateAsync(state: IState) {
@@ -71,8 +87,6 @@ class Home extends React.Component<IState> {
         });
     }
 
-
-
     render() {
         return (
             <div className="container align-content-center  panel">
@@ -80,7 +94,7 @@ class Home extends React.Component<IState> {
                     <div className="row">
                         <div className="form-control">
                             <WeatherDetails weather={this.state.weather} />
-                            <Form countries={this.state.countries}/>
+                            <Form getWeather={this.getWeather} countries={this.state.countries}/>
 
                         </div>
                     </div>
